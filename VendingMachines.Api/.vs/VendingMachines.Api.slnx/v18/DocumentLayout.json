@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F707C2D8-375E-43DB-A6C6-A6108881A1FE}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F707C2D8-375E-43DB-A6C6-A6108881A1FE}|VendingMachines.Api\\VendingMachines.Api.csproj|solutionrelative:vendingmachines.api\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F707C2D8-375E-43DB-A6C6-A6108881A1FE}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F707C2D8-375E-43DB-A6C6-A6108881A1FE}|VendingMachines.Api\\VendingMachines.Api.csproj|solutionrelative:vendingmachines.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F707C2D8-375E-43DB-A6C6-A6108881A1FE}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F707C2D8-375E-43DB-A6C6-A6108881A1FE}|VendingMachines.Api\\VendingMachines.Api.csproj|solutionrelative:vendingmachines.api\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F707C2D8-375E-43DB-A6C6-A6108881A1FE}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F707C2D8-375E-43DB-A6C6-A6108881A1FE}|VendingMachines.Api\\VendingMachines.Api.csproj|solutionrelative:vendingmachines.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F707C2D8-375E-43DB-A6C6-A6108881A1FE}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\vendingmachines.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{F707C2D8-375E-43DB-A6C6-A6108881A1FE}|VendingMachines.Api\\VendingMachines.Api.csproj|solutionrelative:vendingmachines.api\\vendingmachines.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "VendingMachines.Api\\WeatherForecast.cs",
+              "ToolTip": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\WeatherForecast.cs",
+              "RelativeToolTip": "VendingMachines.Api\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T21:13:04.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\Program.cs",
+              "RelativeDocumentMoniker": "VendingMachines.Api\\Program.cs",
+              "ToolTip": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\Program.cs",
+              "RelativeToolTip": "VendingMachines.Api\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T18:53:20.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "VendingMachines.Api\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "VendingMachines.Api\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-16T21:12:32.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "VendingMachines.Api\\appsettings.json",
+              "ToolTip": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\appsettings.json",
+              "RelativeToolTip": "VendingMachines.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-16T21:12:43.947Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VendingMachines.Api.http",
+              "DocumentMoniker": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\VendingMachines.Api.http",
+              "RelativeDocumentMoniker": "VendingMachines.Api\\VendingMachines.Api.http",
+              "ToolTip": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\VendingMachines.Api.http",
+              "RelativeToolTip": "VendingMachines.Api\\VendingMachines.Api.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-01-16T18:53:16.03Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
