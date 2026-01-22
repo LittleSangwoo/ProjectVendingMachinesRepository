@@ -36,3 +36,9 @@ D:\professionals\ProjectVendingMachines\VendingMachines.Desktop\VendingMachines.
 D:\professionals\ProjectVendingMachines\VendingMachines.Desktop\VendingMachines.Desktop\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\professionals\ProjectVendingMachines\VendingMachines.Desktop\VendingMachines.Desktop\obj\Debug\Pages\Main.baml
 D:\professionals\ProjectVendingMachines\VendingMachines.Desktop\VendingMachines.Desktop\obj\Debug\VendingM.7626CDCB.Up2Date
+D:\professionals\ProjectVendingMachines\VendingMachines.Desktop\VendingMachines.Desktop\bin\Debug\LiveCharts.dll
+D:\professionals\ProjectVendingMachines\VendingMachines.Desktop\VendingMachines.Desktop\bin\Debug\LiveCharts.Wpf.dll
+D:\professionals\ProjectVendingMachines\VendingMachines.Desktop\VendingMachines.Desktop\bin\Debug\LiveCharts.pdb
+D:\professionals\ProjectVendingMachines\VendingMachines.Desktop\VendingMachines.Desktop\bin\Debug\LiveCharts.xml
+D:\professionals\ProjectVendingMachines\VendingMachines.Desktop\VendingMachines.Desktop\bin\Debug\LiveCharts.Wpf.pdb
+D:\professionals\ProjectVendingMachines\VendingMachines.Desktop\VendingMachines.Desktop\bin\Debug\LiveCharts.Wpf.xml

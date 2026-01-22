@@ -4,40 +4,27 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:VendingMachines.Desktop.Pages"
+      xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Main" 
         Background="#FFE6E6E6">
 
     <Page.Resources>
-        <!-- Цвета -->
-        <SolidColorBrush x:Key="TopBarBrush" Color="#FF1F1F1F"/>
-        <SolidColorBrush x:Key="SidebarBrush" Color="#FF2A2F36"/>
-        <SolidColorBrush x:Key="SidebarItemBrush" Color="#FF2A2F36"/>
-        <SolidColorBrush x:Key="SidebarHoverBrush" Color="#FF3A424C"/>
-        <SolidColorBrush x:Key="TextLightBrush" Color="#FFEAEAEA"/>
-
-        <!-- Стиль кнопок меню -->
-        <Style x:Key="SideButtonStyle" TargetType="Button">
-            <Setter Property="Foreground" Value="{StaticResource TextLightBrush}"/>
-            <Setter Property="Background" Value="{StaticResource SidebarItemBrush}"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="Padding" Value="14,10"/>
+        <Style x:Key="MenuButtonStyle" TargetType="RadioButton">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="Transparent"/>
             <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Margin" Value="20,5,0,5"/>
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button">
+                    <ControlTemplate TargetType="RadioButton">
                         <Border Background="{TemplateBinding Background}">
                             <ContentPresenter/>
                         </Border>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{StaticResource SidebarHoverBrush}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter Property="Opacity" Value="0.5"/>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Foreground" Value="#4CAF50"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -45,181 +32,195 @@
             </Setter>
         </Style>
 
-        <!-- Стиль кнопок подменю -->
-        <Style x:Key="SubSideButtonStyle" TargetType="Button" BasedOn="{StaticResource SideButtonStyle}">
-            <Setter Property="Padding" Value="34,8"/>
-            <Setter Property="FontSize" Value="13"/>
-            <Setter Property="Background" Value="#FF232830"/>
+        <Style x:Key="MenuExpanderStyle" TargetType="Expander">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Margin" Value="20,5,0,5"/>
+        </Style>
+
+        <Style x:Key="SubMenuButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Gray"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="0,2"/>
+        </Style>
+
+        <Style x:Key="FilterButtonStyle" TargetType="RadioButton">
+            <Setter Property="Margin" Value="5"/>
         </Style>
     </Page.Resources>
-
+    
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="54"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="250"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- TOP BAR -->
-        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="{StaticResource TopBarBrush}">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="240"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="260"/>
-                </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Background="#2B2E36">
+            <StackPanel>
+                <TextBlock Text="Лого" Foreground="White" FontSize="24" Margin="20" FontWeight="Bold"/>
 
-                <!-- Лого -->
-                <TextBlock Grid.Column="0"
-                           Text="Лого"
-                           Foreground="White"
-                           FontSize="18"
-                           VerticalAlignment="Center"
-                           Margin="14,0,0,0"/>
+                <TextBlock Text="Навигация" Foreground="Gray" Margin="20,10,0,10"/>
 
-                <!-- Заголовок -->
-                <TextBlock Grid.Column="1"
-                           Text="ООО Торговые автоматы"
-                           Foreground="White"
-                           FontSize="16"
-                           VerticalAlignment="Center"/>
+                <StackPanel>
+                    <RadioButton Content="🔍 Главная" Style="{StaticResource MenuButtonStyle}" IsChecked="True"/>
+                    <RadioButton Content="💻 Монитор ТА" Style="{StaticResource MenuButtonStyle}"/>
 
-                <!-- Профиль справа -->
-                <Button Grid.Column="2"
-                        x:Name="ProfileButton"
-                        Background="Transparent"
-                        BorderThickness="0"
-                        Click="ProfileButton_Click"
-                        Cursor="Hand">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,14,0">
-                        <TextBlock x:Name="UserNameText"
-                                   Text="Автоматов А.А."
-                                   Foreground="White"
-                                   FontSize="14"
-                                   VerticalAlignment="Center"/>
-                        <TextBlock Text="  ▼"
-                                   Foreground="White"
-                                   FontSize="14"
-                                   VerticalAlignment="Center"/>
+                    <Expander Header="📄 Детальные отчеты" Style="{StaticResource MenuExpanderStyle}">
+                        <StackPanel Margin="20,0,0,0">
+                            <Button Content="Отчет по продажам" Style="{StaticResource SubMenuButtonStyle}"/>
+                        </StackPanel>
+                    </Expander>
+
+                    <Expander Header="🛒 Учет ТМЦ" Style="{StaticResource MenuExpanderStyle}"/>
+
+                    <Expander Header="⚙ Администрирование" Style="{StaticResource MenuExpanderStyle}">
+                        <StackPanel Margin="20,0,0,0">
+                            <Button Content="Торговые автоматы" Style="{StaticResource SubMenuButtonStyle}"/>
+                            <Button Content="Компании" Style="{StaticResource SubMenuButtonStyle}"/>
+                            <Button Content="Пользователи" Style="{StaticResource SubMenuButtonStyle}"/>
+                        </StackPanel>
+                    </Expander>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Column="1" Background="#F0F2F5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border Grid.Row="0" Background="White" BorderBrush="#E0E0E0" BorderThickness="0,0,0,1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Content="☰" Grid.Column="0" Margin="10" Background="Transparent" BorderThickness="0"/>
+                    <TextBlock Text="ООО Торговые Автоматы" Grid.Column="1" VerticalAlignment="Center" FontSize="16" FontWeight="SemiBold"/>
+
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="10">
+                        <Image Source="{Binding CurrentUser.Photo}" Width="30" Height="30" Margin="0,0,10,0"/>
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock Text="{Binding CurrentUser.ShortName}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding CurrentUser.Role}" FontSize="10" Foreground="Gray"/>
+                        </StackPanel>
+                        <ComboBox Margin="5,0,0,0" VerticalAlignment="Center" BorderThickness="0">
+                            <ComboBoxItem Content="Мой профиль"/>
+                            <ComboBoxItem Content="Мои сессии"/>
+                            <ComboBoxItem Content="Выход"/>
+                        </ComboBox>
                     </StackPanel>
-                </Button>
+                </Grid>
+            </Border>
 
-                <!-- Popup меню профиля -->
-                <Popup x:Name="ProfilePopup"
-                       PlacementTarget="{Binding ElementName=ProfileButton}"
-                       Placement="Bottom"
-                       StaysOpen="False"
-                       AllowsTransparency="True">
-                    <Border Background="White" CornerRadius="8" Padding="14" Width="260"
-                            BorderBrush="#33000000" BorderThickness="1">
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <Grid Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Text="Личный кабинет. Главная" FontSize="22" Margin="0,0,0,20"/>
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0" Background="White" Margin="0,0,10,10" Padding="15" CornerRadius="5">
+                            <StackPanel>
+                                <TextBlock Text="Эффективность сети" FontWeight="Bold"/>
+                                <lvc:AngularGauge Value="{Binding NetworkEfficiencyPercentage}" 
+                                                  FromValue="0" ToValue="100" 
+                                                  Height="150" LabelsStep="50" TicksStep="25"
+                                                  Wedge="300" TicksForeground="White"/>
+                                <TextBlock Text="Работающих автоматов - 100%" HorizontalAlignment="Center" Foreground="Green"/>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="1" Background="White" Margin="10,0,10,10" Padding="15" CornerRadius="5">
+                            <StackPanel>
+                                <TextBlock Text="Состояние сети" FontWeight="Bold"/>
+                                <lvc:PieChart Series="{Binding NetworkStateSeries}" LegendLocation="Right" Height="150" InnerRadius="50">
+                                </lvc:PieChart>
+                            </StackPanel>
+                        </Border>
+
+                        <Border Grid.Column="2" Background="White" Margin="10,0,0,10" Padding="15" CornerRadius="5">
+                            <StackPanel>
+                                <TextBlock Text="Сводка" FontWeight="Bold" Margin="0,0,0,10"/>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="Денег в ТА" Margin="0,2"/>
+                                        <TextBlock Text="Сдача в ТА" Margin="0,2"/>
+                                        <TextBlock Text="Выручка, сегодня" Margin="0,2"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+                                        <TextBlock Text="{Binding TotalMoney}" FontWeight="Bold" Margin="0,2"/>
+                                        <TextBlock Text="{Binding TotalChange}" FontWeight="Bold" Margin="0,2"/>
+                                        <TextBlock Text="{Binding RevenueToday}" FontWeight="Bold" Margin="0,2"/>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+
+                    <Border Grid.Row="2" Background="White" Margin="0,10,0,10" Padding="15" CornerRadius="5">
                         <StackPanel>
-                            <TextBlock x:Name="UserFullText" Text="Автоматов А.А." FontSize="18" FontWeight="SemiBold"/>
-                            <TextBlock x:Name="UserRoleText" Text="Администратор" Foreground="#88000000" Margin="0,2,0,12"/>
+                            <TextBlock Text="Динамика продаж за последние 10 дней" FontWeight="Bold"/>
+                            <TextBlock Text="Данные по продажам с 01.03 по 10.03" FontSize="10" Foreground="Gray" Margin="0,0,0,10"/>
 
-                            <Button Content="Мой профиль" Click="MyProfile_Click"
-                                    Background="Transparent" BorderThickness="0"
-                                    HorizontalContentAlignment="Left" Padding="8" Cursor="Hand"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                                <RadioButton Content="По сумме" Style="{StaticResource FilterButtonStyle}" IsChecked="True" 
+                                             Command="{Binding FilterSalesCommand}" CommandParameter="Sum"/>
+                                <RadioButton Content="По количеству" Style="{StaticResource FilterButtonStyle}" Margin="10,0,0,0"
+                                             Command="{Binding FilterSalesCommand}" CommandParameter="Count"/>
+                            </StackPanel>
 
-                            <Button Content="Мои сессии" Click="MySessions_Click"
-                                    Background="Transparent" BorderThickness="0"
-                                    HorizontalContentAlignment="Left" Padding="8" Cursor="Hand"/>
-
-                            <Separator Margin="0,8"/>
-
-                            <Button Content="Выход" Click="Logout_Click"
-                                    Background="Transparent" BorderThickness="0"
-                                    HorizontalContentAlignment="Left" Padding="8" Cursor="Hand"/>
+                            <lvc:CartesianChart Series="{Binding SalesDynamicsSeries}" Height="200">
+                                <lvc:CartesianChart.AxisX>
+                                    <lvc:Axis Labels="{Binding DatesLabels}"/>
+                                </lvc:CartesianChart.AxisX>
+                                <lvc:CartesianChart.AxisY>
+                                    <lvc:Axis MinValue="0"/>
+                                </lvc:CartesianChart.AxisY>
+                            </lvc:CartesianChart>
                         </StackPanel>
                     </Border>
-                </Popup>
-            </Grid>
-        </Border>
 
-        <!-- SIDEBAR -->
-        <Border Grid.Row="1" Grid.Column="0" Background="{StaticResource SidebarBrush}">
-            <DockPanel LastChildFill="True">
-
-                <TextBlock Text="Навигация"
-                           Foreground="{StaticResource TextLightBrush}"
-                           Margin="14,12,0,8"
-                           FontSize="13"
-                           Opacity="0.8"
-                           DockPanel.Dock="Top"/>
-
-                <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <StackPanel>
-
-                        <Button Style="{StaticResource SideButtonStyle}"
-                                Content="Главная"
-                                
-                                />
-
-                        <Button Style="{StaticResource SideButtonStyle}"
-                                Content="Монитор ТА"
-                               
-                                />
-
-                        <!-- Детальные отчеты (раскрываемое) -->
-                        <Button Style="{StaticResource SideButtonStyle}"
-                                Content="Детальные отчеты ▼"
-                                Click="ToggleReportsMenu"/>
-
-                        <StackPanel x:Name="ReportsMenu" Visibility="Collapsed">
-                            <Button Style="{StaticResource SubSideButtonStyle}"
-                                    Content="Отчет 1"
-                                    Click="Nav_Report1"/>
-                            <Button Style="{StaticResource SubSideButtonStyle}"
-                                    Content="Отчет 2"
-                                    Click="Nav_Report2"/>
+                    <Border Grid.Row="3" Background="White" Margin="0,10,0,0" Padding="15" CornerRadius="5">
+                        <StackPanel>
+                            <TextBlock Text="Новости" FontWeight="Bold" Margin="0,0,0,10"/>
+                            <ItemsControl ItemsSource="{Binding NewsList}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid Margin="0,5">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="80"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="{Binding Date, StringFormat=dd.MM.yy}" Foreground="Gray"/>
+                                            <TextBlock Grid.Column="1" Text="{Binding Title}" TextDecorations="Underline" Foreground="Blue" Cursor="Hand"/>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
                         </StackPanel>
-
-                        <!-- Учет ТМЦ (раскрываемое) -->
-                        <Button Style="{StaticResource SideButtonStyle}"
-                                Content="Учет ТМЦ ▼"
-                                Click="ToggleInventoryMenu"/>
-
-                        <StackPanel x:Name="InventoryMenu" Visibility="Collapsed">
-                            <Button Style="{StaticResource SubSideButtonStyle}"
-                                    Content="Товары"
-                                    Click="Nav_Goods"/>
-                            <Button Style="{StaticResource SubSideButtonStyle}"
-                                    Content="Склад"
-                                    Click="Nav_Warehouse"/>
-                        </StackPanel>
-
-                        <!-- Администрирование (раскрываемое) -->
-                        <Button Style="{StaticResource SideButtonStyle}"
-                                Content="Администрирование ▼"
-                                Click="ToggleAdminMenu"/>
-
-                        <StackPanel x:Name="AdminMenu" Visibility="Collapsed">
-                            <Button Style="{StaticResource SubSideButtonStyle}"
-                                    Content="Торговые автоматы"
-                                    />
-                            <Button Style="{StaticResource SubSideButtonStyle}"
-                                    Content="Компании"
-                                    Click="Nav_AdminCompanies"/>
-                            <Button Style="{StaticResource SubSideButtonStyle}"
-                                    Content="Пользователи"
-                                    Click="Nav_AdminUsers"/>
-                            <Button Style="{StaticResource SubSideButtonStyle}"
-                                    Content="Модемы"
-                                    Click="Nav_AdminModems"/>
-                        </StackPanel>
-
-                    </StackPanel>
-                </ScrollViewer>
-            </DockPanel>
-        </Border>
-
-        <!-- CONTENT -->
-        <Border Grid.Row="1" Grid.Column="1" Background="#FFE6E6E6">
-            <Frame x:Name="ContentFrame"
-                   NavigationUIVisibility="Hidden"/>
-        </Border>
-
+                    </Border>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
     </Grid>
 </Page>
