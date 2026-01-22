@@ -1,0 +1,225 @@
+﻿<Page x:Class="VendingMachines.Desktop.Pages.Main"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:VendingMachines.Desktop.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Main" 
+        Background="#FFE6E6E6">
+
+    <Page.Resources>
+        <!-- Цвета -->
+        <SolidColorBrush x:Key="TopBarBrush" Color="#FF1F1F1F"/>
+        <SolidColorBrush x:Key="SidebarBrush" Color="#FF2A2F36"/>
+        <SolidColorBrush x:Key="SidebarItemBrush" Color="#FF2A2F36"/>
+        <SolidColorBrush x:Key="SidebarHoverBrush" Color="#FF3A424C"/>
+        <SolidColorBrush x:Key="TextLightBrush" Color="#FFEAEAEA"/>
+
+        <!-- Стиль кнопок меню -->
+        <Style x:Key="SideButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="{StaticResource TextLightBrush}"/>
+            <Setter Property="Background" Value="{StaticResource SidebarItemBrush}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="14,10"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource SidebarHoverBrush}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Стиль кнопок подменю -->
+        <Style x:Key="SubSideButtonStyle" TargetType="Button" BasedOn="{StaticResource SideButtonStyle}">
+            <Setter Property="Padding" Value="34,8"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Background" Value="#FF232830"/>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="54"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="240"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- TOP BAR -->
+        <Border Grid.Row="0" Grid.ColumnSpan="2" Background="{StaticResource TopBarBrush}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="240"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="260"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Лого -->
+                <TextBlock Grid.Column="0"
+                           Text="Лого"
+                           Foreground="White"
+                           FontSize="18"
+                           VerticalAlignment="Center"
+                           Margin="14,0,0,0"/>
+
+                <!-- Заголовок -->
+                <TextBlock Grid.Column="1"
+                           Text="ООО Торговые автоматы"
+                           Foreground="White"
+                           FontSize="16"
+                           VerticalAlignment="Center"/>
+
+                <!-- Профиль справа -->
+                <Button Grid.Column="2"
+                        x:Name="ProfileButton"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Click="ProfileButton_Click"
+                        Cursor="Hand">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,14,0">
+                        <TextBlock x:Name="UserNameText"
+                                   Text="Автоматов А.А."
+                                   Foreground="White"
+                                   FontSize="14"
+                                   VerticalAlignment="Center"/>
+                        <TextBlock Text="  ▼"
+                                   Foreground="White"
+                                   FontSize="14"
+                                   VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+
+                <!-- Popup меню профиля -->
+                <Popup x:Name="ProfilePopup"
+                       PlacementTarget="{Binding ElementName=ProfileButton}"
+                       Placement="Bottom"
+                       StaysOpen="False"
+                       AllowsTransparency="True">
+                    <Border Background="White" CornerRadius="8" Padding="14" Width="260"
+                            BorderBrush="#33000000" BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock x:Name="UserFullText" Text="Автоматов А.А." FontSize="18" FontWeight="SemiBold"/>
+                            <TextBlock x:Name="UserRoleText" Text="Администратор" Foreground="#88000000" Margin="0,2,0,12"/>
+
+                            <Button Content="Мой профиль" Click="MyProfile_Click"
+                                    Background="Transparent" BorderThickness="0"
+                                    HorizontalContentAlignment="Left" Padding="8" Cursor="Hand"/>
+
+                            <Button Content="Мои сессии" Click="MySessions_Click"
+                                    Background="Transparent" BorderThickness="0"
+                                    HorizontalContentAlignment="Left" Padding="8" Cursor="Hand"/>
+
+                            <Separator Margin="0,8"/>
+
+                            <Button Content="Выход" Click="Logout_Click"
+                                    Background="Transparent" BorderThickness="0"
+                                    HorizontalContentAlignment="Left" Padding="8" Cursor="Hand"/>
+                        </StackPanel>
+                    </Border>
+                </Popup>
+            </Grid>
+        </Border>
+
+        <!-- SIDEBAR -->
+        <Border Grid.Row="1" Grid.Column="0" Background="{StaticResource SidebarBrush}">
+            <DockPanel LastChildFill="True">
+
+                <TextBlock Text="Навигация"
+                           Foreground="{StaticResource TextLightBrush}"
+                           Margin="14,12,0,8"
+                           FontSize="13"
+                           Opacity="0.8"
+                           DockPanel.Dock="Top"/>
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+
+                        <Button Style="{StaticResource SideButtonStyle}"
+                                Content="Главная"
+                                
+                                />
+
+                        <Button Style="{StaticResource SideButtonStyle}"
+                                Content="Монитор ТА"
+                               
+                                />
+
+                        <!-- Детальные отчеты (раскрываемое) -->
+                        <Button Style="{StaticResource SideButtonStyle}"
+                                Content="Детальные отчеты ▼"
+                                Click="ToggleReportsMenu"/>
+
+                        <StackPanel x:Name="ReportsMenu" Visibility="Collapsed">
+                            <Button Style="{StaticResource SubSideButtonStyle}"
+                                    Content="Отчет 1"
+                                    Click="Nav_Report1"/>
+                            <Button Style="{StaticResource SubSideButtonStyle}"
+                                    Content="Отчет 2"
+                                    Click="Nav_Report2"/>
+                        </StackPanel>
+
+                        <!-- Учет ТМЦ (раскрываемое) -->
+                        <Button Style="{StaticResource SideButtonStyle}"
+                                Content="Учет ТМЦ ▼"
+                                Click="ToggleInventoryMenu"/>
+
+                        <StackPanel x:Name="InventoryMenu" Visibility="Collapsed">
+                            <Button Style="{StaticResource SubSideButtonStyle}"
+                                    Content="Товары"
+                                    Click="Nav_Goods"/>
+                            <Button Style="{StaticResource SubSideButtonStyle}"
+                                    Content="Склад"
+                                    Click="Nav_Warehouse"/>
+                        </StackPanel>
+
+                        <!-- Администрирование (раскрываемое) -->
+                        <Button Style="{StaticResource SideButtonStyle}"
+                                Content="Администрирование ▼"
+                                Click="ToggleAdminMenu"/>
+
+                        <StackPanel x:Name="AdminMenu" Visibility="Collapsed">
+                            <Button Style="{StaticResource SubSideButtonStyle}"
+                                    Content="Торговые автоматы"
+                                    />
+                            <Button Style="{StaticResource SubSideButtonStyle}"
+                                    Content="Компании"
+                                    Click="Nav_AdminCompanies"/>
+                            <Button Style="{StaticResource SubSideButtonStyle}"
+                                    Content="Пользователи"
+                                    Click="Nav_AdminUsers"/>
+                            <Button Style="{StaticResource SubSideButtonStyle}"
+                                    Content="Модемы"
+                                    Click="Nav_AdminModems"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </DockPanel>
+        </Border>
+
+        <!-- CONTENT -->
+        <Border Grid.Row="1" Grid.Column="1" Background="#FFE6E6E6">
+            <Frame x:Name="ContentFrame"
+                   NavigationUIVisibility="Hidden"/>
+        </Border>
+
+    </Grid>
+</Page>
