@@ -55,11 +55,13 @@ namespace VendingMachines.Desktop.Pages
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                 // 2) отправляем POST на твой API (замени URL на свой)
-                var resp = _http.PostAsync("https://localhost:7050/api/auth/login", content).Result;
+                var resp = _http.PostAsync("https://localhost:7248/api/auth/login", content).Result;
 
                 if (!resp.IsSuccessStatusCode)
                 {
-                    MessageBox.Show("Неверный логин или пароль.", "ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    var err = resp.Content.ReadAsStringAsync().Result;
+                    MessageBox.Show($"HTTP {(int)resp.StatusCode}\n{err}", "Ошибка входа",
+                        MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
                 }
 
@@ -87,14 +89,17 @@ namespace VendingMachines.Desktop.Pages
                     }
 
                     AppData.Token = token;
+                    Services.ApiService.Token = token;
+                    Services.ApiService.BaseUrl = "https://localhost:7248";
                 }
-                
+
                 this.NavigationService.Navigate(new Pages.Main());
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ошибка подключения: " + ex.Message, "ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+
             }
         }
     }

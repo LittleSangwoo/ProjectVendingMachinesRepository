@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|solutionrelative:vendingmachines.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|solutionrelative:vendingmachines.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,20 +15,20 @@
       "RelativeMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|solutionrelative:vendingmachines.api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|solutionrelative:vendingmachines.api\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|solutionrelative:vendingmachines.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\controllers\\vendingmachinescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|solutionrelative:vendingmachines.api\\controllers\\vendingmachinescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|solutionrelative:vendingmachines.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|solutionrelative:vendingmachines.api\\services\\jwttokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|solutionrelative:vendingmachines.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{92AD479C-9AB5-C719-9DF9-4A006211FC3C}|VendingMachines.Api\\VendingMachines.Api.csproj|d:\\professionals\\projectvendingmachines\\vendingmachines.api\\vendingmachines.api\\vendingmachines.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -42,32 +42,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "VendingMachinesController.cs",
               "DocumentMoniker": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\Controllers\\VendingMachinesController.cs",
               "RelativeDocumentMoniker": "VendingMachines.Api\\Controllers\\VendingMachinesController.cs",
               "ToolTip": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\Controllers\\VendingMachinesController.cs",
               "RelativeToolTip": "VendingMachines.Api\\Controllers\\VendingMachinesController.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAcwBIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-19T10:14:50.583Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\Program.cs",
               "RelativeDocumentMoniker": "VendingMachines.Api\\Program.cs",
               "ToolTip": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\Program.cs",
               "RelativeToolTip": "VendingMachines.Api\\Program.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAC8AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-16T18:53:20.922Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-16T18:53:20.922Z"
             },
             {
               "$type": "Document",
@@ -77,10 +76,9 @@
               "RelativeDocumentMoniker": "VendingMachines.Api\\Controllers\\AuthController.cs",
               "ToolTip": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\Controllers\\AuthController.cs",
               "RelativeToolTip": "VendingMachines.Api\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAiwC4AAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAwwAMAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-19T09:05:41.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-01-19T09:05:41.024Z"
             },
             {
               "$type": "Document",
@@ -90,43 +88,44 @@
               "RelativeDocumentMoniker": "VendingMachines.Api\\Models\\User.cs",
               "ToolTip": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\Models\\User.cs",
               "RelativeToolTip": "VendingMachines.Api\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAmwBcAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-19T10:11:14.404Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "VendingMachines.Api\\Data\\AppDbContext.cs",
               "ToolTip": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\Data\\AppDbContext.cs",
               "RelativeToolTip": "VendingMachines.Api\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAkwDEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-19T09:43:01.145Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\appsettings.json",
               "RelativeDocumentMoniker": "VendingMachines.Api\\appsettings.json",
               "ToolTip": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\appsettings.json",
               "RelativeToolTip": "VendingMachines.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-01-16T21:12:43.947Z"
+              "WhenOpened": "2026-01-16T21:12:43.947Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "JwtTokenService.cs",
               "DocumentMoniker": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\Services\\JwtTokenService.cs",
               "RelativeDocumentMoniker": "VendingMachines.Api\\Services\\JwtTokenService.cs",
               "ToolTip": "D:\\professionals\\ProjectVendingMachines\\VendingMachines.Api\\VendingMachines.Api\\Services\\JwtTokenService.cs",
               "RelativeToolTip": "VendingMachines.Api\\Services\\JwtTokenService.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwBYAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-18T20:56:35.774Z"
             },

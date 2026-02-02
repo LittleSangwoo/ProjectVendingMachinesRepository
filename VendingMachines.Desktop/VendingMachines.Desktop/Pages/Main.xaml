@@ -108,11 +108,58 @@
                             <TextBlock Text="{Binding CurrentUser.ShortName}" FontWeight="Bold"/>
                             <TextBlock Text="{Binding CurrentUser.Role}" FontSize="10" Foreground="Gray"/>
                         </StackPanel>
-                        <ComboBox Margin="5,0,0,0" VerticalAlignment="Center" BorderThickness="0">
-                            <ComboBoxItem Content="Мой профиль"/>
-                            <ComboBoxItem Content="Мои сессии"/>
-                            <ComboBoxItem Content="Выход"/>
-                        </ComboBox>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+
+                            <!-- Аватар -->
+                            <Border Width="36" Height="36" CornerRadius="18" Background="#FFEDEDED" Margin="0,0,10,0">
+                                <Image Source="{Binding AvatarImage}" Stretch="UniformToFill"/>
+                            </Border>
+
+                            <!-- ФИО + роль -->
+                            <StackPanel Margin="0,0,10,0" VerticalAlignment="Center">
+                                <TextBlock Text="{Binding FullName}" FontWeight="SemiBold"/>
+                                <TextBlock Text="{Binding Role}" Foreground="Gray" FontSize="12"/>
+                            </StackPanel>
+
+                            <!-- стрелка -->
+                            <ToggleButton x:Name="ProfileToggle"
+                  Width="30" Height="30"
+                  Content="˅"
+                  FontSize="16"
+                  BorderBrush="#DDDDDD"
+                  BorderThickness="1"
+                  Background="Transparent"/>
+
+                            <!-- меню -->
+                            <Popup PlacementTarget="{Binding ElementName=ProfileToggle}"
+           Placement="Bottom"
+           StaysOpen="False"
+           AllowsTransparency="True"
+           PopupAnimation="Fade"
+           IsOpen="{Binding IsChecked, ElementName=ProfileToggle}">
+
+                                <Border Background="White" CornerRadius="10" BorderBrush="#DDDDDD" BorderThickness="1"
+                Padding="6" Margin="0,6,0,0">
+                                    <StackPanel Width="200">
+
+                                        <Button Content="👤 Мой профиль" Click="MyProfile_Click"
+                        Background="Transparent" BorderThickness="0"
+                        HorizontalContentAlignment="Left" Padding="10"/>
+
+                                        <Button Content="📋 Мои сессии" Click="MySessions_Click"
+                        Background="Transparent" BorderThickness="0"
+                        HorizontalContentAlignment="Left" Padding="10"/>
+
+                                        <Separator Margin="6"/>
+
+                                        <Button Content="⏻ Выход" Click="Logout_Click"
+                        Background="Transparent" BorderThickness="0"
+                        HorizontalContentAlignment="Left" Padding="10"/>
+                                    </StackPanel>
+                                </Border>
+                            </Popup>
+
+                        </StackPanel>
                     </StackPanel>
                 </Grid>
             </Border>
