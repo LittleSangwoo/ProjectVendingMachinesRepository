@@ -1,0 +1,117 @@
+openapi: 3.0.3
+info:
+  title: Minimal API
+  version: 1.0.0
+
+servers:
+  - url: /api/v1
+
+paths:
+  /auth/login:
+    post:
+      summary: Login (get tokens)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/LoginRequest" }
+      responses:
+        "200":
+          description: Tokens
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/TokensResponse" }
+
+  /orders:
+    get:
+      summary: Get orders list
+      responses:
+        "200":
+          description: Orders
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/OrderDto" }
+
+    post:
+      summary: Create order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/OrderCreateRequest" }
+      responses:
+        "201":
+          description: Created order
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/OrderDto" }
+
+  /reports:
+    post:
+      summary: Generate report (returns file)
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/ReportRequest" }
+      responses:
+        "200":
+          description: Report file (PDF or XLSX)
+          content:
+            application/pdf:
+              schema: { type: string, format: binary }
+            application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:
+              schema: { type: string, format: binary }
+
+  /notifications:
+    get:
+      summary: Get notifications list
+      responses:
+        "200":
+          description: Notifications
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/NotificationDto" }
+
+components:
+  schemas:
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email: { type: string, example: "user@example.com" }
+        password: { type: string, example: "P@ssw0rd123" }
+
+    TokensResponse:
+      type: object
+      required: [accessToken, refreshToken]
+      properties:
+        accessToken: { type: string, example: "JWT..." }
+        refreshToken: { type: string, example: "REFRESH..." }
+
+
+
+    ReportRequest:
+      type: object
+      required: [format]
+      properties:
+        format:
+          type: string
+          enum: [PDF, XLSX]
+        from:
+          type: string
+          example: "2026-01-01"
+        to:
+          type: string
+          example: "2026-01-31"
+
+    NotificationDto:
+      type: object
+      required: [id, text]
+      properties:
+        id: { type: string, example: "uuid" }
+        text: { type: string, example: "Order ORD-0001 created" }
